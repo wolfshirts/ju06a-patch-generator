@@ -50,6 +50,46 @@ func getParameters() map[string][]int {
 	}
 }
 
+func GetOrderedParams() []string {
+	return []string{
+		"LFO RATE",
+		"LFO DELAY TIME",
+		"LFO WAVE",
+		"LFO TRIG",
+		"OSC RANGE",
+		"OSC LFO MOD",
+		"PWM",
+		"PWM SOURCE",
+		"SQR SW",
+		"SAW SW",
+		"SUB LEVEL",
+		"NOISE LEVEL",
+		"SUB SW",
+		"HPF",
+		"CUTOFF",
+		"RESONANCE",
+		"ENV POLARITY",
+		"ENV MOD",
+		"FLT LFO MOD",
+		"FLT KEY FOLLOW",
+		"AMP MODE",
+		"AMP LEVEL",
+		"ATTACK",
+		"DECAY",
+		"SUSTAIN",
+		"RELEASE",
+		"CHORUS SW",
+		"DELAY LEVEL",
+		"DELAY TIME",
+		"DELAY FEEDBACK",
+		"DELAY SW",
+		"PORTA SW",
+		"PORTA TIME",
+		"ASSIGN MODE",
+		"BEND RANGE",
+		"TEMPO SYNC"}
+}
+
 func createRangeMap(dataDirectory string) string {
 	files, err := os.ReadDir(dataDirectory)
 	if err != nil {

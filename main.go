@@ -52,8 +52,8 @@ func convertAndNamePatch(p map[string]int) string {
 	patchName := dict.GetPatchName(rand.Intn(2) + 1)
 	fmt.Println("Creating... " + patchName)
 	serialized := ""
-	for k, v := range p {
-		line := fmt.Sprintf("%s (%d);\n", k, v)
+	for _, v := range ranges.GetOrderedParams() {
+		line := fmt.Sprintf("%s (%d);\n", v, p[v])
 		serialized += line
 	}
 	serialized += fmt.Sprintf("PATCH_NAME(%s);", patchName)
