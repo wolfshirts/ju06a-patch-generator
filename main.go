@@ -27,13 +27,13 @@ func main() {
 		p := generatePatch()
 		fileName := fmt.Sprintf("JU06A_PATCH%d.PRM", i+1)
 		fmt.Println(fileName)
-		fmt.Println(p)
 		st := convertAndNamePatch(p)
 		f, err := os.Create(fmt.Sprintf("%s/%s", dir, fileName))
 		if err != nil {
 			panic(err)
 		}
 		f.Write([]byte(st))
+		f.Chmod(0777)
 		f.Close()
 	}
 }
