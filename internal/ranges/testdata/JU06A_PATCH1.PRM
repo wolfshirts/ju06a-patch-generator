@@ -20,7 +20,7 @@ FLT LFO MOD     (0);
 FLT KEY FOLLOW  (175);
 AMP MODE        (1);
 AMP LEVEL       (165);
-ATTACK          (61);
+ATTACK          (1);
 DECAY           (173);
 SUSTAIN         (163);
 RELEASE         (0);

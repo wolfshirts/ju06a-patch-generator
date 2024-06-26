@@ -53,7 +53,12 @@ func convertAndNamePatch(p map[string]int) string {
 	fmt.Println("Creating... " + patchName)
 	serialized := ""
 	for _, v := range ranges.GetOrderedParams() {
-		line := fmt.Sprintf("%s (%d);\n", v, p[v])
+		pad := 16 - len(v)
+		fixed := v
+		for i := 0; i < pad; i++ {
+			fixed += " "
+		}
+		line := fmt.Sprintf("%s(%d);\r\n", fixed, p[v])
 		serialized += line
 	}
 	serialized += fmt.Sprintf("PATCH_NAME(%s);", patchName)
