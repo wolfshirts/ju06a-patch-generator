@@ -25,7 +25,22 @@ This project creates random patches for the Roland JU-06a sound module.
 
 ## Usage
 ## Working with the tool
-This is a standard go app. To build this app simply use `go build .`
+Build the app with:
+`go build .`
+
+Execuate the app with:
+`./ju0ga-generator -patches <n>`
+Where n is the number of patches to generate. The maximum is 128.
+
+The application will output the directory the patches are created in, and the name of each patch as it is created.
+```
+Created directory farad...
+Creating... darkle          
+Creating... fowl            
+Creating... Salk clout    
+```
+
+Once this is complete these patches can be transferred to the device.
 
 ## Working with the device
 ### Backup

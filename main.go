@@ -23,10 +23,10 @@ func main() {
 	if err != nil {
 		panic("failed to create storage directory")
 	}
+	fmt.Println("Created directory " + dir + "...")
 	for i := 0; i < *patchCount; i++ {
 		p := generatePatch()
 		fileName := fmt.Sprintf("JU06A_PATCH%d.PRM", i+1)
-		fmt.Println(fileName)
 		st := convertAndNamePatch(p)
 		f, err := os.Create(fmt.Sprintf("%s/%s", dir, fileName))
 		if err != nil {
@@ -49,7 +49,7 @@ func generatePatch() map[string]int {
 }
 
 func convertAndNamePatch(p map[string]int) string {
-	patchName := dict.GetPatchName(rand.Intn(3) + 1)
+	patchName := dict.GetPatchName(rand.Intn(2) + 1)
 	fmt.Println("Creating... " + patchName)
 	serialized := ""
 	for k, v := range p {
